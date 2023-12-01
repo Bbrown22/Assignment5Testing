@@ -8,18 +8,22 @@ public class CustomListApplication {
         CustomList<String> list = new CustomArrayList<>();
         
         // Test add method
-        System.out.println("");
-        System.out.println("This is the add test; ");
-        System.out.println("");
         
-        for (int i = 0; i < 15; i++) {
+        System.out.println("");
+        System.out.println("This is the fale add method; ");
+        System.out.println("");
+        System.out.println(list.add(null));
+        System.out.println("");
+        System.out.println("This is the true add method; ");
+        System.out.println("");
+        for (int i = 0; i < 20; i++) {
             boolean result = list.add("Item " + i);
             
             System.out.println("Added: Item " + i + ", add: " + result);
         }
         // Test get method	
         System.out.println("");
-        System.out.println("This is the get test; ");
+        System.out.println("This is the get method; ");
         System.out.println("");
         
         for (int i = 0; i < list.getSize(); i++) {
@@ -30,7 +34,7 @@ public class CustomListApplication {
 
         // Test getSize method
         System.out.println("");
-        System.out.println("This is the getSize test; ");
+        System.out.println("This is the getSize method; ");
         System.out.println("");
         
         System.out.println("\nSize of the list: " + list.getSize());
