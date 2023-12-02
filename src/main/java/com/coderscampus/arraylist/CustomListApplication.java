@@ -6,7 +6,6 @@ public class CustomListApplication {
 
 	public static void main(String[] args) {
         CustomList<String> list = new CustomArrayList<>();
-        
         // Test add method
         
         System.out.println("");
@@ -35,9 +34,8 @@ public class CustomListApplication {
         // Test getSize method
         System.out.println("");
         System.out.println("This is the getSize method; ");
-        System.out.println("");
-        
         System.out.println("\nSize of the list: " + list.getSize());
+        
     }
 
 }
