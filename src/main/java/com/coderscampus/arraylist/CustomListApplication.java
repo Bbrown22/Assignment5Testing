@@ -4,38 +4,33 @@ import java.util.Arrays;
 
 public class CustomListApplication {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
         CustomList<String> list = new CustomArrayList<>();
-        // Test add method
-        
-        System.out.println("");
-        System.out.println("This is the fale add method; ");
-        System.out.println("");
-        System.out.println(list.add(null));
-        System.out.println("");
-        System.out.println("This is the true add method; ");
-        System.out.println("");
-        for (int i = 0; i < 20; i++) {
-            boolean result = list.add("Item " + i);
-            
-            System.out.println("Added: Item " + i + ", add: " + result);
-        }
-        // Test get method	
-        System.out.println("");
-        System.out.println("This is the get method; ");
-        System.out.println("");
-        
-        for (int i = 0; i < list.getSize(); i++) {
-        	
-        	System.out.println(list.get(i));
-        	
-        }
 
-        // Test getSize method
-        System.out.println("");
-        System.out.println("This is the getSize method; ");
-        System.out.println("\nSize of the list: " + list.getSize());
-        
+        testAddMethod(list);
+        testGetMethod(list);
+        testGetSizeMethod(list);
     }
 
+    private static void testAddMethod(CustomList<String> list) {
+        System.out.println("Testing add method:");
+        System.out.println("Adding null: " + list.add(null));
+        for (int i = 0; i < 20; i++) {
+            boolean result = list.add("Item " + i);
+            System.out.println("Added: Item " + i + ", add: " + result);
+        }
+        System.out.println();
+    }
+
+    private static void testGetMethod(CustomList<String> list) {
+        System.out.println("Testing get method:");
+        System.out.println("Element at index 7: " + list.get(7));
+        System.out.println();
+    }
+
+    private static void testGetSizeMethod(CustomList<String> list) {
+        System.out.println("Testing getSize method:");
+        System.out.println("Size of the list expected 20: " + list.getSize());
+        System.out.println();
+    }
 }
