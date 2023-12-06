@@ -4,34 +4,29 @@ import java.util.Arrays;
 
 public class CustomArrayList<T> implements CustomList<T> {
 	Object[] items = new Object[10];
+	private int size = 0;
 
 	@Override
-	public boolean add(T item) {
-	    if (item == null) {
-	        return false;
-	    }
-	    for (int i = 0; i < items.length; i++) {
-	        if (items[i] == null) {
-	            items[i] = item;
-	            return true;
-	        }
-	    }
-	    Object[] newItems = new Object[items.length + 1];
-	    System.arraycopy(items, 0, newItems, 0, items.length);
-	    newItems[items.length] = item;
-	    items = newItems;
-	    return true;
+    public boolean add(T item) {
+        if (item == null) {
+            return false;
+        }
+        if (size == items.length) {
+            Object[] newItems = new Object[items.length * 2];
+            System.arraycopy(items, 0, newItems, 0, items.length);
+            items = newItems;
+        }
+        items[size] = item;
+        size++;
+        return true;
+    }
+	public int getCapacity() {
+	    return items.length;
 	}
-	@Override
-	public int getSize() {
-	    int currentSize = 0;
-	    for(int i = 0; i < items.length; i++) {
-	        if(items[i] != null) {
-	            currentSize++;
-	        }
+	 @Override
+	    public int getSize() {
+	        return size;
 	    }
-	    return currentSize;
-	}
 
 	@Override
 	public T get(int index) {
